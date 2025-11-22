@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <h1>Task<span class="highlight">Master</span></h1>
+            <div id="user-info" class="hidden">
+                <span id="username-display"></span>
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Auth Section -->
+            <section id="auth-section">
+                <div class="glass-card auth-card">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-target="login-form">Login</button>
+                        <button class="tab-btn" data-target="signup-form">Signup</button>
+                    </div>
+                    
+                    <form id="login-form" class="auth-form active">
+                        <h2>Welcome Back</h2>
+                        <div class="input-group">
+                            <input type="email" id="login-email" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="login-password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+
+                    <form id="signup-form" class="auth-form">
+                        <h2>Create Account</h2>
+                        <div class="input-group">
+                            <input type="text" id="signup-username" placeholder="Username" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="signup-email" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="signup-password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Todo Section -->
+            <section id="todo-section" class="hidden">
+                <div class="glass-card todo-card">
+                    <form id="add-todo-form">
+                        <input type="text" id="new-todo-input" placeholder="What needs to be done?" required>
+                        <button type="submit" class="btn btn-icon" aria-label="Add Todo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </form>
+
+                    <ul id="todo-list">
+                        <!-- Todos will be injected here -->
+                    </ul>
+
+                    <div class="todo-footer">
+                        <span id="todo-count">0 items left</span>
+                        <button id="clear-all-btn" class="text-btn">Clear All</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
