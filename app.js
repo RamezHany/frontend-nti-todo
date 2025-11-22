@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5173/api'; // Backend Port + /api prefix
+const API_URL = 'https://backend-nti-todo-production.up.railway.app/api'; // Backend Port + /api prefix
 
 // State
 let currentUser = null;
